@@ -7,3 +7,13 @@ media/
 celerybeat-schedule.db
 
 
+
+[program:celery-beat]
+command=/home/odosumbekov/project/venv/bin/celery -A config beat --loglevel=INFO
+directory=/home/odosumbekov/project/
+user=www-data
+autostart=true
+autorestart=true
+stdout_logfile=/home/odosumbekov/project/logs/celery-beat.log
+redirect_stderr=true
+
